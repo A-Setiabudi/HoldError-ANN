@@ -8,20 +8,20 @@ input = df.as_matrix()
 df = pd.read_excel('target.xlsx')
 target = df.as_matrix()
 
-#book = xlrd.open_workbook('training.xlsx')
-#sheet = book.sheet_by_name('Sheet1')
-#input = [[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)]
+# book = xlrd.open_workbook('training.xlsx')
+# sheet = book.sheet_by_name('Sheet1')
+# input = [[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)]
 
-#book = xlrd.open_workbook('target.xlsx')
-#sheet = book.sheet_by_name('Sheet1')
-#target = [[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)]
+# book = xlrd.open_workbook('target.xlsx')
+# sheet = book.sheet_by_name('Sheet1')
+# target = [[sheet.cell_value(r, c) for c in range(sheet.ncols)] for r in range(sheet.nrows)]
 
 print(input)
 print(target)
 
 
-#net = nl.load('sum.net')
-#input(Wp, Wn, Vdd, Vin, Ch)
+# net = nl.load('sum.net')
+# input(Wp, Wn, Vdd, Vin, Ch)
 net = nl.net.newff([[0, 1e-4], [0, 1e-4], [0, 3], [0, 3] ,[0, 1e-9]],[50, 20, 20, 1])
 
 net.trainf = nl.train.train_bfgs
